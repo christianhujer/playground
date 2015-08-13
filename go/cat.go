@@ -1,8 +1,10 @@
 package main
 
-import "fmt"
-import "io"
-import "os"
+import (
+    "fmt"
+    "io"
+    "os"
+)
 
 var errors int
 
@@ -44,8 +46,8 @@ func catFile(file string) {
         errors++
         return
     }
-    catStream(stream)
     defer stream.Close()
+    catStream(stream)
 }
 
 func catStream(stream *os.File) {
